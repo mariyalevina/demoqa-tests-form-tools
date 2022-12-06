@@ -1,4 +1,4 @@
-package guru.qa.tests;
+package com.levina.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
@@ -13,10 +13,11 @@ public class StudentRegistrationFormTests {
     @BeforeAll
     static void beforeAll() {
         Configuration.browserSize = "2100x1080";
+        Configuration.baseUrl = "https://demoqa.com";
     }
     @Test
     void fillFormTest() {
-     open("https://demoqa.com/automation-practice-form");
+     open("/automation-practice-form");
      $("#firstName").setValue("Mariya");
      $("#lastName").setValue("Levina");
      $("#userEmail").setValue("mariya.levina@simbirsoft.com");
@@ -44,7 +45,5 @@ public class StudentRegistrationFormTests {
         $(".table-responsive").shouldHave(text("Mariya Levina"), text("mariya.levina@simbirsoft.com"),
                 text("Female"), text("1234567890"), text("08 November,2022"), text("Chemistry"), text("Sports"),
                 text("123.png"), text("Ulyanovsk, st. Kamyshinskaya 105"), text("NCR Delhi"));
-
     }
-
 }

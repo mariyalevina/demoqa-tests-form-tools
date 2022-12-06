@@ -1,4 +1,4 @@
-package guru.qa.docs;
+package com.levina.docs;
 
 import org.junit.jupiter.api.*;
 
