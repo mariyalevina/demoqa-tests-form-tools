@@ -1,7 +1,10 @@
 package com.levina.tests;
 
+import com.github.javafaker.Faker;
+
 public class TestData {
-    public static String
+
+       public static String
             firstName = "Mariya",
             lastName = "Levina",
             Email = "mariya.levina@simbirsoft.com",
