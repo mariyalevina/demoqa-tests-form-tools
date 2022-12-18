@@ -15,23 +15,24 @@ public class StudentRegistrationFormTests {
         Configuration.browserSize = "2100x1080";
         Configuration.baseUrl = "https://demoqa.com";
     }
+
     @Test
     void fillFormTest() {
-     open("/automation-practice-form");
-     $("#firstName").setValue("Mariya");
-     $("#lastName").setValue("Levina");
-     $("#userEmail").setValue("mariya.levina@simbirsoft.com");
-     $("#genterWrapper").$(byText("Female")).click();
-     $("#userNumber").setValue("1234567890");
+        open("/automation-practice-form");
+        $("#firstName").setValue("Mariya");
+        $("#lastName").setValue("Levina");
+        $("#userEmail").setValue("mariya.levina@simbirsoft.com");
+        $("#genterWrapper").$(byText("Female")).click();
+        $("#userNumber").setValue("1234567890");
 
-     $("#dateOfBirthInput").click();
-     $(".react-datepicker__month-select").selectOption("November");
-     $(".react-datepicker__year-select").selectOption("2022");
-     $(".react-datepicker__day--008:not(.react-datepicker__day--outside-month)").click();
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__month-select").selectOption("November");
+        $(".react-datepicker__year-select").selectOption("2022");
+        $(".react-datepicker__day--008:not(.react-datepicker__day--outside-month)").click();
 
-      $("#subjectsInput").setValue("Chemistry").pressEnter();
-      $("#hobbiesWrapper").$(byText("Sports")).click();
-      $("#uploadPicture").uploadFromClasspath("img/123.png");
+        $("#subjectsInput").setValue("Chemistry").pressEnter();
+        $("#hobbiesWrapper").$(byText("Sports")).click();
+        $("#uploadPicture").uploadFromClasspath("img/123.png");
 
         $("#currentAddress").setValue("Ulyanovsk, st. Kamyshinskaya 105");
         $("#state").click();
