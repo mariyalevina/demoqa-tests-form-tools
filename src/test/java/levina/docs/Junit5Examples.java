@@ -1,4 +1,4 @@
-package com.levina.docs;
+package levina.docs;
 
 import org.junit.jupiter.api.*;
 
