@@ -1,7 +1,9 @@
 package levina.tests;
 
 import com.codeborne.selenide.Configuration;
+import config.CredentialsConfig;
 import levina.TestBase;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -9,8 +11,22 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
+import static java.lang.String.format;
 
 public class StudentRegistrationFormTests extends TestBase {
+
+    public CredentialsConfig credentials =
+            ConfigFactory.create(CredentialsConfig.class);
+
+    @Test
+    void readCredentialsTest() {
+        String login = credentials.login();
+        String password = credentials.password();
+
+        System.out.println(login);
+        System.out.println(password);
+
+    }
 
     @Test
     void fillFormTest() {
