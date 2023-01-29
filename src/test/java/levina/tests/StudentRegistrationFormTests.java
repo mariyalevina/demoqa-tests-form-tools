@@ -1,17 +1,15 @@
 package levina.tests;
 
-import com.codeborne.selenide.Configuration;
 import config.CredentialsConfig;
 import levina.TestBase;
 import org.aeonbits.owner.ConfigFactory;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static java.lang.String.format;
 
 public class StudentRegistrationFormTests extends TestBase {
 
@@ -19,6 +17,7 @@ public class StudentRegistrationFormTests extends TestBase {
             ConfigFactory.create(CredentialsConfig.class);
 
     @Test
+    @Tag("properties")
     void readCredentialsTest() {
         String login = credentials.login();
         String password = credentials.password();
@@ -30,21 +29,21 @@ public class StudentRegistrationFormTests extends TestBase {
 
     @Test
     void fillFormTest() {
-     open("/automation-practice-form");
-     $("#firstName").setValue("Mariya");
-     $("#lastName").setValue("Levina");
-     $("#userEmail").setValue("mariya.levina@simbirsoft.com");
-     $("#genterWrapper").$(byText("Female")).click();
-     $("#userNumber").setValue("1234567890");
+        open("/automation-practice-form");
+        $("#firstName").setValue("Mariya");
+        $("#lastName").setValue("Levina");
+        $("#userEmail").setValue("mariya.levina@simbirsoft.com");
+        $("#genterWrapper").$(byText("Female")).click();
+        $("#userNumber").setValue("1234567890");
 
-     $("#dateOfBirthInput").click();
-     $(".react-datepicker__month-select").selectOption("November");
-     $(".react-datepicker__year-select").selectOption("2022");
-     $(".react-datepicker__day--008:not(.react-datepicker__day--outside-month)").click();
+        $("#dateOfBirthInput").click();
+        $(".react-datepicker__month-select").selectOption("November");
+        $(".react-datepicker__year-select").selectOption("2022");
+        $(".react-datepicker__day--008:not(.react-datepicker__day--outside-month)").click();
 
-      $("#subjectsInput").setValue("Chemistry").pressEnter();
-      $("#hobbiesWrapper").$(byText("Sports")).click();
-      $("#uploadPicture").uploadFromClasspath("img/123.png");
+        $("#subjectsInput").setValue("Chemistry").pressEnter();
+        $("#hobbiesWrapper").$(byText("Sports")).click();
+        $("#uploadPicture").uploadFromClasspath("img/123.png");
 
         $("#currentAddress").setValue("Ulyanovsk, st. Kamyshinskaya 105");
         $("#state").click();
