@@ -3,9 +3,9 @@ package levina.tests.properties;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("properties")
 public class SystemPropertiesTests {
     @Test
-    @Tag("properties")
     void someTest4() {
         String value = System.getProperty("browser", "chrome");
         System.out.println(value);
@@ -17,7 +17,6 @@ public class SystemPropertiesTests {
     }
 
     @Test
-    @Tag("properties")
     void someTest5() {
         String browser = System.getProperty("browser", "chrome");
         String version = System.getProperty("version", "91");
