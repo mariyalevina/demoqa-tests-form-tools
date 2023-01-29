@@ -11,14 +11,14 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-@Tag("properties")
+
 public class StudentRegistrationFormTests extends TestBase {
 
     public CredentialsConfig credentials =
             ConfigFactory.create(CredentialsConfig.class);
 
+    @Tag("Credentials")
     @Test
-    @Tag("properties")
     void readCredentialsTest() {
         String login = credentials.login();
         String password = credentials.password();
@@ -28,6 +28,7 @@ public class StudentRegistrationFormTests extends TestBase {
 
     }
 
+    @Tag("registration")
     @Test
     void fillFormTest() {
         open("/automation-practice-form");
