@@ -58,10 +58,3 @@ task properties_tests(type: Test) {
         includeTags "properties"
     }
 }
-
-task many_tags_tests(type: Test) {
-    useJUnitPlatform {
-        includeTags "properties"
-        excludeTags "registration"
-    }
-}
